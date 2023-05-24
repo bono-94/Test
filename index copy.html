@@ -1,0 +1,18 @@
+<script>
+    var x = "fred";
+    fetch("http://127.0.0.1:3000/saythird"+x)
+    .then(res => res.json())
+    .then(d => processdata(d))
+    function processdata(thedata){
+        console.log("y");
+        for(var x= 0; x < thedata.length; x++){
+            document.getElementById("mydata").innerHTML += thedata[x].Name+"<br>"
+        }
+    }
+</script>
+
+<div id="mydata">
+
+</div>
+
+<input>

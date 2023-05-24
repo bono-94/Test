@@ -1,0 +1,20 @@
+<script>
+    function fetchData() {
+        var input = document.getElementById("myInput").value;
+        fetch("http://127.0.0.1:3000/saythird/" + input)
+            .then(res => res.json())
+            .then(data => processdata(data));
+    }
+
+    function processdata(thedata) {
+        console.log("y");
+        for (var x = 0; x < thedata.length; x++) {
+            document.getElementById("mydata").innerHTML += thedata[x].Name + "<br>";
+        }
+    }
+</script>
+
+<div id="mydata"></div>
+
+<input type="text" id="myInput">
+<button onclick="fetchData()">Fetch Data</button>
